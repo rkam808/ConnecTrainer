@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  enum status: [:pending, :confirmed, :declined], _default: :pending
+  enum status: [:pending, :confirmed, :declined]
   belongs_to :workout
   belongs_to :user
 
