@@ -1,0 +1,52 @@
+.cards {
+  width: 540px;
+}
+
+.card-workout {
+  overflow: hidden;
+  height: 150px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-workout img {
+  height: 100%;
+  width: 150px;
+  object-fit: cover;
+}
+
+.card-workout h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-workout p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-workout .card-workout-infos {
+  padding: 16px;
+}
+
+
+.workout-card {
+  position: relative;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  &:hover {
+    background-color: rgba(0, 0, 0, .3);
+  }
+}
