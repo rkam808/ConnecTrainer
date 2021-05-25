@@ -4,14 +4,7 @@ class WorkoutsController < ApplicationController
   before_action :set_workout, only: [:edit, :update, :destroy]
 
   def index
-    # @workouts = policy_scope(Workout).all
-
-    if params[:query].present?
-      @workouts = Workout.where(category: params[:query])
-    else
-      @workouts = Workout.all
-    end
-
+    @workouts = policy_scope(Workout).all
   end
 
   def show
