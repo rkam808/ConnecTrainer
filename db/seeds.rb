@@ -16,12 +16,17 @@ today = DateTime.now
     email: Faker::Internet.email,
     password: Faker::Internet.password
   )
-  1.times do
+
+
+  2.times do
+    category = Workout::CATEGORIES.sample
     example_workout = Workout.create!(
-    category: Workout::CATEGORIES.sample,
+    category: category,
     location: locations.sample,
-    name: Faker::Verb.ing_form,
-    user_id: example.id
+    name:   ("#{Faker::Verb.ing_form} #{category}").capitalize,
+    user_id: example.id,
+    description: Faker::Quote.matz,
+    price: (rand(1..4).to_s + "000").to_i
   )
   1.times do
     Booking.create!(
