@@ -1,7 +1,7 @@
 .banner-workout-index {
   height: 60vh;
 }
-  
+
 .banner {
   background-size: cover;
   background-position: center;
@@ -30,6 +30,17 @@
   background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1569186273859-0a3cf0a68568?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2818&q=80);
   background-size: cover;
   // background-repeat: no-repeat;
+  background-position: 50% 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-workout-index {
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1569186273859-0a3cf0a68568?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2818&q=80);
+  height: 60vh;
+  background-size: cover;
   background-position: 50% 50%;
   color: white;
   display: flex;
