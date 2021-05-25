@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # resources :users, only: [:new, :create, :]
   resources :workouts
 
+  get '/dashboard', to: 'dashboard#index'
 end

@@ -1,6 +1,27 @@
+.navbar {
+  padding: 0 8px;
+
+  // .show {
+  //   background-color: rgba(0,0,0,.8);
+  // }
+  a {
+    text-shadow: 1px 1px 3px rgba(0,0,0, 20%);
+  }
+}
+
+.nav-item {
+  // font-weight: bolder;
+  font-size: 24px;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-color: transparent;
+  transition: 0.5s background-color ease;
+}
+
+.navbar-lewagon-dark {
+  background-color: rgba(0,0,0,.8);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,3 +31,21 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-brand {
+  font-size: 40px;
+  padding: 0 8px;
+  margin: 0;
+}
+
+.navbar-toggler {
+  margin: 0 8px;
+}
+
+// .fa-film {
+//   color: $light-gray;
+//   opacity: .5;
+//   &:hover {
+//     opacity: 1;
+//   }
+// }
