@@ -1,7 +1,7 @@
 <div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://www.womensrunning.com/wp-content/uploads/2015/07/yoga-on-the-beach.jpg?crop=535:301&width=1070&enable=upscale');">
-  <div class="container">
-        <h1><%= @workout.name %></h1>
-        <p class="mt-2"><i><%= @workout.category %></i>i</p>
+  <div class="container p-5">
+    <h1 class=""><%= @workout.name %></h1>
+    <p class="mt-2"><i><%= @workout.category %></i></p>
   </div>
 </div>
 
@@ -11,38 +11,17 @@
 
         <h2><%= @workout.name %> is...</h2>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore
-       magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris
-       nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate
-       velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in
-       culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <p>  <%= @workout.description %>  </p>
+
+
       </div>
-      <div class="align-items-center">
-        <div class="form">
-          <div class="mb-3">
-            <label for="date" class="form-label">Which date?</label>
-            <input type="date" class="form-control" id="dateForm">
-          </div>
-          <div class="mb-3">
-            <label for="request-form" class="form-label">Request form</label>
-            <input type="text" class="form-control" id="requestForm" aria-describedby="emailHelp">
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">I confirmed</label>
-          </div>
-          <%= button_to 'Create', workouts_path, method: :get, class:"btn btn-primary" %>
-        </div>
+      <div class="align-items-center bg-secondary p-2 rounded">
+        <h2 class= "border-bottom">Book your Workout! </h2>
 
         <%= simple_form_for @booking do |f| %>
         <%= f.input :date_time, html5: true, input_html: { min: Date.today } %>
         <%= f.input :comment %>
-        <%= f.hidden_field :workout_id, value: "declined" %>
+        <%= f.hidden_field :workout_id %>
         <%= f.button :submit, class: "btn btn-primary"  %>
         <% end %>
 
