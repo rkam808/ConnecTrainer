@@ -5,4 +5,10 @@ class Workout < ApplicationRecord
 
   validates :category, :location, :name, presence: true
   validates :category, inclusion: { in: CATEGORIES }
+
+  # def Self.categories
+  #   Workout.all.uniq do |workout|
+  #     if workout.unique
+  # end
+
 end
