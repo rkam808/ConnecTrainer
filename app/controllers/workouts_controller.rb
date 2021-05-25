@@ -53,7 +53,7 @@ class WorkoutsController < ApplicationController
   private
 
   def set_workout
-    @workout = Workout.find(params[:id])
+    @workout = Workout.find(params[:id].to_i)
     authorize @workout
   end
 
