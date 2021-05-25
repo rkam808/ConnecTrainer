@@ -1,0 +1,20 @@
+<form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+  <select class="form-select form-control my-2" aria-label="Default select example">
+            <option selected>Select a Category</option>
+            <% Workout.all.uniq do |  workout| %>
+            <option value="1"> <%= workout.category %>  </option>
+            <% end %>
+
+        </select>
+  <div class="search-form-control form-group">
+        <div>
+        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+
+        <%= link_to "Submit", workouts_path, class: "btn btn-flat" %>
+    </div>
+  </div>
+
+
+
+</form>
