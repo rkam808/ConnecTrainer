@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   # resources :users, only: [:new, :create, :]
+  resources :workouts
+
   get '/dashboard', to: 'dashboard#index'
 end
