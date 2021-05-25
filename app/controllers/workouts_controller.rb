@@ -9,6 +9,7 @@ class WorkoutsController < ApplicationController
 
   def show
     @workout = Workout.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
