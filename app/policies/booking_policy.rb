@@ -4,6 +4,10 @@ class BookingPolicy < ApplicationPolicy
       scope.all
     end
 
+    def new?
+      true
+    end
+
     def create?
       true
     end

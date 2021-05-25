@@ -1,17 +1,20 @@
 class BookingsController < ApplicationController
 
-  def new
-    @booking = Booking.new
-  end
+skip_after_action :verify_authorized, only: [:new]
+
+
 
   def create
     @booking = Booking.new(booking_params)
+    # @workout = Workout.find(params[:workout_id])
+    # @booking.workout = @workout
     @booking.user = current_user
+    raise
     authorize @booking
     if @booking.save
       redirect_to workouts_path
     else
-      redirect_to workouts_path
+      redirect_to
     end
   end
 
@@ -27,6 +30,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :date_time)
+    params.require(:booking).permit(:comment, :date_time)
   end
 end

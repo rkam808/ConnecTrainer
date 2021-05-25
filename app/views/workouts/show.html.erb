@@ -42,6 +42,7 @@
         <%= simple_form_for @booking do |f| %>
         <%= f.input :date_time, html5: true, input_html: { min: Date.today } %>
         <%= f.input :comment %>
+        <%= f.hidden_field :workout_id, value: "declined" %>
         <%= f.button :submit, class: "btn btn-primary"  %>
         <% end %>
 
