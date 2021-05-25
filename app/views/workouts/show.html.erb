@@ -38,6 +38,15 @@
           </div>
           <%= button_to 'Create', workouts_path, method: :get, class:"btn btn-primary" %>
         </div>
+
+        <%= simple_form_for @booking do |f| %>
+        <%= f.input :date_time, html5: true, input_html: { min: Date.today } %>
+        <%= f.input :comment %>
+        <%= f.button :submit, class: "btn btn-primary"  %>
+        <% end %>
+
+
+
       </div>
     </div>
   </div>

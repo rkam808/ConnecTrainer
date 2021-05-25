@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
 
-  resources :bookings, only: [:edit, :update]
+  resources :bookings, only: [:edit, :update, :new, :create]
   resources :users, only: [:show]
   resources :workouts
 
