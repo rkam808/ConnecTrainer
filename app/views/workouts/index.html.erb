@@ -1,16 +1,27 @@
-<h1>WORKOUTS</h1>
-
-<% @workouts.each do |workout| %>
-<%= workout.name %>
-<% end %>
-<div class="banner">
-  <h1>WORKOUTS</h1>
-  <h1>WORKOUTS</h1>
-  <h1>WORKOUTS</h1>
-  <h1>WORKOUTS</h1>
-  <h1>WORKOUTS</h1>
-  <h1>WORKOUTS</h1>
-  <h1>WORKOUTS</h1>
-  <h1>WORKOUTS</h1>
-
+<div class="banner-workout-index">
+  <div class="container mt-5">
+    <div class="banner-text">
+			<h1>Workouts</h1>
+			<p>Embark on a new adventure with us</p>
+    </div>
+	</div>
 </div>
+
+<div class="container">
+
+  <h1 class="my-5">WORKOUTS in ==SEARCH CRITERIA== </h1>
+
+  <div class="search-results">
+    <div class="cards">
+      <% @workouts.each do |workout| %>
+       <%= render 'index-card', { workout: workout } %>
+      <% end %>
+    </div>
+    <div class="sidebar">
+      <div class="change-search"></div>
+      <div class="map"></div>
+    </div>
+  </div>
+</div>
+
+
