@@ -1,9 +1,15 @@
-<div style="background-image: url('https://s3-ap-northeast-1.amazonaws.com/repos.kids.rurubu.jp/uploads/2020/07/07104702/29705_main_02603F.jpg');">
+<div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://www.womensrunning.com/wp-content/uploads/2015/07/yoga-on-the-beach.jpg?crop=535:301&width=1070&enable=upscale');">
   <div class="container">
-    <div class="d-flex justify-content-center">
-      <div class="workout-discription">
         <h1><%= @workout.name %></h1>
-        <h2><i><%= @workout.category %></i>i</h2>
+        <p class="mt-2"><i><%= @workout.category %></i>i</p>
+  </div>
+</div>
+
+<div class="container">
+    <div class="d-flex justify-content-between m-5">
+      <div class="workout-discription">
+
+        <h2><%= @workout.name %> is...</h2>
 
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
       sed do eiusmod tempor incididunt ut labore et dolore
@@ -30,7 +36,7 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">I confirmed</label>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <%= button_to 'Create', workouts_path, method: :get, class:"btn btn-primary" %>
         </div>
       </div>
     </div>
