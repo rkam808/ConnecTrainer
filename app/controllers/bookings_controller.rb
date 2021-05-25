@@ -11,8 +11,7 @@ skip_after_action :verify_authorized, only: [:new]
     if @booking.save
       redirect_to workouts_path
     else
-      raise
-      redirect_to workouts_path
+      redirect_to workout_path(@booking.workout)
     end
   end
 

@@ -3,17 +3,15 @@ class BookingPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
-
-    def new?
-      create?
-    end
+  end
 
     def create?
       true
     end
 
+
+
     def update?
       user == record.user
     end
   end
-end
