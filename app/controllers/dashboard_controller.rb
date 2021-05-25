@@ -1,6 +1,7 @@
 class DashboardController < ApplicationController
+
   def index
-    @outgoing_requests = current_user.bookings
-    @my_workouts = current_user.workouts
+    # @outgoing_requests = policy_scope(Booking).all
+    @my_workouts = policy_scope(current_user.workouts).all
   end
 end
