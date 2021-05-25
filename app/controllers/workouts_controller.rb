@@ -1,4 +1,5 @@
 class WorkoutsController < ApplicationController
+
   skip_after_action :verify_authorized, only: [:show, :index, :new]
   before_action :set_workout, only: [:edit, :update, :destroy]
 
@@ -59,5 +60,4 @@ class WorkoutsController < ApplicationController
   def workout_params
     params.require(:workout).permit(:category, :account_type)
   end
-
 end

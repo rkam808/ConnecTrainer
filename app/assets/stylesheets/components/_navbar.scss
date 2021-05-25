@@ -1,12 +1,14 @@
 .navbar {
   padding: 0 8px;
-
+  position: fixed;
+  top: 0;
+  width: 100%;
   // .show {
   //   background-color: rgba(0,0,0,.8);
   // }
-  a {
-    text-shadow: 1px 1px 3px rgba(0,0,0, 20%);
-  }
+  // a {
+  //   text-shadow: 1px 1px 3px rgba(0,0,0, 20%);
+  // }
 }
 
 .nav-item {
@@ -16,13 +18,14 @@
 
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: transparent;
+  // background-color: transparent;
+  background-color: white;
   transition: 0.5s background-color ease;
 }
 
-.navbar-lewagon-dark {
-  background-color: rgba(0,0,0,.8);
-}
+// .navbar-lewagon-dark {
+//   background-color: rgba(0,0,0,.8);
+// }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -41,11 +44,3 @@
 .navbar-toggler {
   margin: 0 8px;
 }
-
-// .fa-film {
-//   color: $light-gray;
-//   opacity: .5;
-//   &:hover {
-//     opacity: 1;
-//   }
-// }
