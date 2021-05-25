@@ -1,8 +1,10 @@
+<%#= render 'shared/navbar' %>
 <div class="container">
   <table class="table">
+    <h3>My Outgoing Workout Requests</h3>
     <thead>
       <tr>
-        <th scope="col">""</th>
+        <th scope="col"></th>
         <th scope="col">Workout</th>
         <th scope="col">Trainer</th>
         <th scope="col">When</th>
@@ -10,26 +12,57 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <% @outgoing_requests.each do |booking| %>
+      <% @outgoing_requests.each do |booking| %>
+        <tr>
+          <th scope="row"></th>
           <td><%= booking.workout.name %>, <%= booking.workout.category %>, <%= booking.workout.location %></td>
           <td><%= booking.workout.user.name %></td>
           <td><%= booking.date_time %></td>
-        <% end %>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
+          <td><%= booking.status %></td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
+  <br>
+  <br>
+  <table class="table">
+    <h3>Requests for My Workouts</h3>
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Workout</th>
+        <th scope="col">Participant</th>
+        <th scope="col">When</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @my_workouts.each do |workout| %>
+        <% workout.bookings.each do |booking| %>
+          <tr>
+            <th scope="row"></th>
+            <td><%= workout.name %>, <%= booking.workout.category %>, <%= booking.workout.location %></td>
+            <td><%= booking.user.name %></td>
+            <td><%= booking.date_time %></td>
+            <td><%= booking.status %></td>
+            <td><%= simple_form_for booking do |f| -%>
+              <%= f.hidden_field :status, value: "confirmed" %>
+              <%= f.submit "Confirm" %>
+            <% end -%></td>
+            <td><%= simple_form_for booking do |f| -%>
+              <%= f.hidden_field :status, value: "declined" %>
+              <%= f.submit "Decline" %>
+            <% end -%></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+
+  </table>
 </div>
+
+
+              <%#= simple_form_for booking do |f| %>
+                <%#= f.input :status, collection: Booking.statuses.map{ |status| [status, status] }, placeholder: booking.status %>
+                <%#= f.submit "Confirm", class: "btn btn-success" %>
+              <%# end %>
