@@ -45,11 +45,24 @@
             <td><%= booking.user.name %></td>
             <td><%= booking.date_time %></td>
             <td><%= booking.status %></td>
+            <td><%= simple_form_for booking do |f| -%>
+              <%= f.hidden_field :status, value: "confirmed" %>
+              <%= f.submit "Confirm" %>
+            <% end -%></td>
+            <td><%= simple_form_for booking do |f| -%>
+              <%= f.hidden_field :status, value: "declined" %>
+              <%= f.submit "Decline" %>
+            <% end -%></td>
           </tr>
         <% end %>
       <% end %>
     </tbody>
+
   </table>
 </div>
 
 
+              <%#= simple_form_for booking do |f| %>
+                <%#= f.input :status, collection: Booking.statuses.map{ |status| [status, status] }, placeholder: booking.status %>
+                <%#= f.submit "Confirm", class: "btn btn-success" %>
+              <%# end %>
