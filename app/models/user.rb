@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :workouts
 
-  validates :name, :location, presence: true
+  # validates :name, :location, presence: true
 end
