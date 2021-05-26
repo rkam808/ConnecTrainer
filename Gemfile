@@ -23,11 +23,11 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'pundit'
 
-
 # Additional Gems
 gem 'devise'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'faker'
+gem 'cloudinary', '~> 1.16.0'
 gem 'geocoder'
 
 
