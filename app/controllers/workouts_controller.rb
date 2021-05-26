@@ -5,6 +5,13 @@ class WorkoutsController < ApplicationController
 
   def index
     @workouts = policy_scope(Workout).all
+
+    @markers = @workouts.geocoded.map do |workout|
+      {
+        lat: workout.latitude,
+        lng: workout.longitude
+      }
+    end
   end
 
   def show

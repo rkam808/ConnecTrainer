@@ -7,21 +7,31 @@
 	</div>
 </div>
 
-<div class="container">
+<div class="container py-3">
 
-  <h1 class="my-5">WORKOUTS in ==SEARCH CRITERIA== </h1>
 
-  <div class="search-results">
-    <div class="cards">
+  <%# <div class="map-text"> %>
+    <h1 class="my-5">Badminton workouts in Tokyo:</h1>
+
+    <div class="search-results">
+      <div class="cards">
       <% @workouts.each do |workout| %>
-       <%= render 'index-card', { workout: workout } %>
+        <% if workout.category == 'badminton' %>
+          <%= render 'index-card', workout: workout %>
+        <% end %>
       <% end %>
+      </div>
+    <div class="sidebar ml-4 rounded">
+      <%# <div class="change-search"></div> %>
+      <%# <div class="map"></div> %>
+      <div id="map" class="map-workouts rounded"
+       style="width: 100%; height: 600px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
-    <div class="sidebar">
-      <div class="change-search"></div>
-      <div class="map"></div>
     </div>
-  </div>
+  <%# </div> %>
 </div>
 
 
