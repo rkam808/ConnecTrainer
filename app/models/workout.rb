@@ -7,6 +7,9 @@ class Workout < ApplicationRecord
   validates :category, :location, :name, presence: true
   validates :category, inclusion: { in: CATEGORIES }
 
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
   # def Self.categories
   #   Workout.all.uniq do |workout|
   #     if workout.unique
