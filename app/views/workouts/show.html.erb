@@ -1,4 +1,5 @@
-<div class="show-banner nav-fix" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://www.womensrunning.com/wp-content/uploads/2015/07/yoga-on-the-beach.jpg?crop=535:301&width=1070&enable=upscale');">
+
+ <div class="show-banner nav-fix" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%=@workout.photo.attached? ? cl_image_path(@workout.photo.key) : image_path("https://source.unsplash.com/1200x800/?#{@workout.category}") %>);">
   <div class="container">
     <h1><%= @workout.name %></h1>
     <p class="mt-2"><i><%= @workout.category %></i>i</p>
