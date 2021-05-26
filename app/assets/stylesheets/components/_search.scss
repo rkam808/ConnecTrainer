@@ -28,9 +28,14 @@
   padding: 8px;
   position: absolute;
   top: 80px;
-  border-radius: 12px;
+  border-radius: 12 px;
 }
 
 .search-bow :first-child {
   border-radius: 20px;
+}
+
+.search-change {
+  max-width: 500px;
+  margin: 0 auto;
 }

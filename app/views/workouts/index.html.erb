@@ -13,18 +13,24 @@
   <%# <div class="map-text"> %>
     <h1 class="my-5">Badminton workouts in Tokyo:</h1>
 
-    <div class="search-results">
+    <div class="search-results mt-3">
       <div class="cards">
       <% @workouts.each do |workout| %>
-        <% if workout.category == 'badminton' %>
+        <%# if workout.category == 'badminton' %>
           <%= render 'index-card', workout: workout %>
-        <% end %>
+        <%# end %>
       <% end %>
       </div>
 
       <%# <div class="change-search"></div> %>
+    <div class="sidebar ml-5 rounded">
+      <div class="search-change">
+        <h2>New search:</h2>
+        <%= render "shared/search" %>
+      </div>
+
       <%# <div class="map"></div> %>
-      <div id="map" class="map-workouts rounded"
+      <div id="map" class="map-workouts rounded mt-4"
        style="width: 100%; height: 600px;"
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
