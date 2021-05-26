@@ -3,6 +3,7 @@ class WorkoutPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
       def show?
         true
@@ -24,4 +25,4 @@ class WorkoutPolicy < ApplicationPolicy
 
 
   end
-end
+
