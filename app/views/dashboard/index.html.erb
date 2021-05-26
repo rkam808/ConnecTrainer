@@ -47,11 +47,11 @@
             <td><%= booking.status %></td>
             <td><%= simple_form_for booking do |f| -%>
               <%= f.hidden_field :status, value: "confirmed" %>
-              <%= f.submit "Confirm" %>
+              <%= f.button :submit, "Confirm", class: "btn btn-success" %>
             <% end -%></td>
             <td><%= simple_form_for booking do |f| -%>
               <%= f.hidden_field :status, value: "declined" %>
-              <%= f.submit "Decline" %>
+              <%= f.button :submit, "Decline", class: "btn btn-danger" %>
             <% end -%></td>
           </tr>
         <% end %>
