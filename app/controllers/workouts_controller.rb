@@ -1,5 +1,5 @@
 class WorkoutsController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [:index, :show]
   skip_after_action :verify_authorized, only: [:show, :index, :new]
   before_action :set_workout, only: [:edit, :update, :destroy]
 
