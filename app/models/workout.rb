@@ -6,6 +6,7 @@ class Workout < ApplicationRecord
 
   validates :category, :location, :name, presence: true
   validates :category, inclusion: { in: CATEGORIES }
+  has_one_attached :photo
 
   # def Self.categories
   #   Workout.all.uniq do |workout|
