@@ -9,7 +9,7 @@ skip_after_action :verify_authorized, only: [:new]
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to workouts_path
+      redirect_to dashboard_path
     else
       redirect_to workout_path(@booking.workout)
     end
@@ -21,12 +21,14 @@ skip_after_action :verify_authorized, only: [:new]
 
   def update
     @booking = Booking.find(params[:id])
+    authorize @booking
     @booking.update(booking_params)
+    redirect_to dashboard_path
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:comment, :date_time, :workout_id)
+    params.require(:booking).permit(:comment, :date_time, :workout_id, :status)
   end
 end

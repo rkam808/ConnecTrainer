@@ -12,9 +12,19 @@
 @import "components/index";
 @import "components/banner";
 @import "components/cards";
+@import "components/maps";
 @import "workouts";
 @import "pages/index";
 
 .nav-fix {
   margin-top: 76px;
+}
+
+h1, h2{
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: light;
 }
