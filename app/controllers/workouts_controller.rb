@@ -4,7 +4,7 @@ class WorkoutsController < ApplicationController
   before_action :set_workout, only: [:edit, :update, :destroy]
 
   def index
-    @workouts = policy_scope(Workout).all
+    @workouts = policy_scope(Workout).all.order('created_at DESC')
 
     @markers = @workouts.geocoded.map do |workout|
       {
@@ -60,6 +60,6 @@ class WorkoutsController < ApplicationController
   end
 
   def workout_params
-    params.require(:workout).permit(:category, :account_type)
+    params.require(:workout).permit(:category, :account_type, :location, :name, :description, :price, :photo)
   end
 end
