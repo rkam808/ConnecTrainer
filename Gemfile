@@ -26,7 +26,9 @@ gem 'pundit'
 
 # Additional Gems
 gem 'devise'
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'faker'
+gem 'geocoder'
 
 
 # Use Active Storage variant
