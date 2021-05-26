@@ -21,7 +21,7 @@
         <% end %>
       <% end %>
       </div>
-    <div class="sidebar ml-4 rounded">
+
       <%# <div class="change-search"></div> %>
       <%# <div class="map"></div> %>
       <div id="map" class="map-workouts rounded"
@@ -29,7 +29,6 @@
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-    </div>
     </div>
   <%# </div> %>
 </div>

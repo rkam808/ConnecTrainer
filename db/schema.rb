@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_05_26_025058) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "status", default: 0
+    t.integer "status"
     t.text "comment"
     t.date "date_time"
     t.bigint "workout_id", null: false
