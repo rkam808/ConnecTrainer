@@ -1,3 +1,11 @@
+<div class="banner-workout-index nav-fix">
+  <div class="container">
+    <div class="banner-text">
+      <h1>My Dashboard</h1>
+      <p>Manage your Bookings!</p>
+    </div>
+  </div>
+</div>
 <div class="container nav-fix">
   <table class="table">
     <h3>My Outgoing Workout Requests</h3>
@@ -24,40 +32,41 @@
   </table>
   <br>
   <br>
-  <table class="table">
-    <h3>Requests for My Workouts</h3>
-    <thead>
-      <tr>
-        <th scope="col"></th>
-        <th scope="col">Workout</th>
-        <th scope="col">Participant</th>
-        <th scope="col">When</th>
-        <th scope="col">Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @my_workouts.each do |workout| %>
-        <% workout.bookings.each do |booking| %>
-          <tr>
-            <th scope="row"></th>
-            <td><%= workout.name %>, <%= booking.workout.category %>, <%= booking.workout.location %></td>
-            <td><%= booking.user.name %></td>
-            <td><%= booking.date_time %></td>
-            <td><%= booking.status %></td>
-            <td><%= simple_form_for booking do |f| -%>
-              <%= f.hidden_field :status, value: "confirmed" %>
-              <%= f.button :submit, "Confirm", class: "btn btn-success" %>
-            <% end -%></td>
-            <td><%= simple_form_for booking do |f| -%>
-              <%= f.hidden_field :status, value: "declined" %>
-              <%= f.button :submit, "Decline", class: "btn btn-danger" %>
-            <% end -%></td>
-          </tr>
+  <% if current_user.workouts.count > 0 %>
+    <table class="table">
+      <h3>Requests for My Workouts</h3>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Workout</th>
+          <th scope="col">Participant</th>
+          <th scope="col">When</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @my_workouts.each do |workout| %>
+          <% workout.bookings.each do |booking| %>
+            <tr>
+              <th scope="row"></th>
+              <td><%= workout.name %>, <%= booking.workout.category %>, <%= booking.workout.location %></td>
+              <td><%= booking.user.name %></td>
+              <td><%= booking.date_time %></td>
+              <td><%= booking.status %></td>
+              <td><%= simple_form_for booking do |f| -%>
+                <%= f.hidden_field :status, value: "confirmed" %>
+                <%= f.button :submit, "Confirm", class: "btn btn-success" %>
+              <% end -%></td>
+              <td><%= simple_form_for booking do |f| -%>
+                <%= f.hidden_field :status, value: "declined" %>
+                <%= f.button :submit, "Decline", class: "btn btn-danger" %>
+              <% end -%></td>
+            </tr>
+          <% end %>
         <% end %>
-      <% end %>
-    </tbody>
-
-  </table>
+      </tbody>
+    </table>
+  <% end %>
 </div>
 
               <%#= simple_form_for booking do |f| %>
