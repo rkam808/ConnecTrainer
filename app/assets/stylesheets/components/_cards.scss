@@ -33,7 +33,11 @@
 }
 
 .card-workout .card-workout-infos {
-  padding: 16px;
+    width: 275px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+
 }
 
 

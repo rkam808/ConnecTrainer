@@ -6,12 +6,12 @@ Booking.destroy_all
 Workout.destroy_all
 User.destroy_all
 puts 'Creating Users & Workouts'
-locations = ['Tokyo', 'Omotesando', 'Yokohama', 'Fujisawa', 'Saitama', 'Setagaya', 'Ueno', 'Meguro', 'Shibuya', 'Shinagawa', 'Kanda', 'Shinjuku', 'Mitaka']
+locations = ['Omotesando', 'Yokohama', 'Fujisawa', 'Saitama', 'Setagaya', 'Ueno', 'Meguro', 'Shibuya', 'Shinagawa', 'Kanda', 'Shinjuku', 'Mitaka']
 today = DateTime.now
 
 10.times do
   example = User.create!(
-    name:  Faker::Name.name,
+    name:  Faker::Name.first_name + " " + Faker::Name.last_name,
     location: Faker::Address.street_address,
     email: Faker::Internet.email,
     password: Faker::Internet.password
@@ -19,14 +19,16 @@ today = DateTime.now
 
 
   2.times do
-    category = Workout::CATEGORIES.sample
+    location = locations.sample
+    club = Workout::CLUBS.sample
+    category = "badminton"
     example_workout = Workout.create!(
     category: category,
-    location: locations.sample,
-    name:   ("#{Faker::Verb.ing_form} #{category}").capitalize,
+    location: ("#{location}, Tokyo"),
+    name:   ("#{location} Badminton #{club}"),
     user_id: example.id,
     description: Faker::Quote.matz,
-    price: (rand(1..4).to_s + "000").to_i
+    price: (rand(5..10).to_s + "00").to_i
   )
   1.times do
     Booking.create!(
