@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
 
-skip_after_action :verify_authorized, only: [:new,]
+skip_after_action :verify_authorized, only: [:new]
 
 
 
