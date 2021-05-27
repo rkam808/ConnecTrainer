@@ -10,8 +10,8 @@
         <p><%= workout.user.name %></p>
       </div>
       <div class="card-text-right">
-        <h5 class="card-price">¥<%= workout.price %></h5>
         <%= image_tag workout.user.photo.attached? ? cl_image_path(workout.user.photo.key, width: 200, height: 200) : "", class: "avatar" %>
+        <h5 class="card-price">¥<%= workout.price %></h5>
       </div>
     </div>
   </div>

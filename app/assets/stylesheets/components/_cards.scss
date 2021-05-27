@@ -4,7 +4,7 @@
 
 .card-workout {
   overflow: hidden;
-  height: 150px;
+  height: 140px;
   width: 100%;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -14,7 +14,7 @@
 
 .card-workout .workout-photo {
   height: 100%;
-  width: 150px;
+  width: 140px;
   object-fit: cover;
 }
 
@@ -66,8 +66,10 @@
 .card-text-right {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   .card-price {
     margin-left: 16px;
+    margin-bottom: 0;
   }
   h5 {
     font-weight: bold;
