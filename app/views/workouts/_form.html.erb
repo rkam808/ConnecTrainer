@@ -1,0 +1,9 @@
+<%= simple_form_for @workout do |f| %>
+  <%= f.input :name, label: "What's the name of your Workout?" %>
+  <%= f.select :category, collection: Workout::CATEGORIES %>
+  <%= f.input :location %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :price, label: 'Price in JPY' %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Submit your Workout", class: "btn btn-primary" %>
+<% end %>
