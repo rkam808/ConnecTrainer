@@ -12,16 +12,15 @@
   </div>
 </div> -->
 <div class="row nav-fix">
-  <div class="col-2">
+  <div class="col nav-col">
     <%= render 'shared/sidebar' %>
   </div>
-  <div class="col-10 dashboard-booking-manager">
+  <div class="col dashboard-booking-manager">
     <!-- Workout requests -->
     <div class="container">
       <table class="table">
-      <h1>My Dashboard</h1>
-      <p>Manage your Bookings!</p>
-
+        <h1>My Dashboard</h1>
+        <p>Manage your Bookings!</p>
         <h3>My Outgoing Workout Requests</h3>
         <thead>
           <tr>
@@ -36,7 +35,10 @@
           <% @outgoing_requests.each do |booking| %>
             <tr>
               <th scope="row"></th>
-              <td><%= booking.workout.name %>, <%= booking.workout.category %>, <%= booking.workout.location %></td>
+              <td>
+                <p><%= booking.workout.name %>,</p>
+                <p><%= booking.workout.location %></p>
+              </td>
               <td><%= booking.workout.user.name %></td>
               <td><%= booking.date_time %></td>
               <td><%= booking.status %></td>
@@ -56,6 +58,8 @@
               <th scope="col">Participant</th>
               <th scope="col">When</th>
               <th scope="col">Status</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
@@ -63,7 +67,10 @@
               <% workout.bookings.each do |booking| %>
                 <tr>
                   <th scope="row"></th>
-                  <td><%= workout.name %>, <%= booking.workout.category %>, <%= booking.workout.location %></td>
+                  <td>
+                    <p><%= workout.name %>,</p>
+                    <p><%= booking.workout.location %></p>
+                  </td>
                   <td><%= booking.user.name %></td>
                   <td><%= booking.date_time %></td>
                   <td><%= booking.status %></td>
