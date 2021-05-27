@@ -28,7 +28,7 @@
     <%# link_to "Sign out", "#", class: "nav-link" %>
     <%# </li> %>
     <li class="nav-item">
-      <%= image_tag user_signed_in? && current_user.photo.attached? ? cl_image_path(current_user.photo.key, width: 200, height: 200) : "https://i1.wp.com/images.vexels.com/media/users/3/153423/isolated/preview/7d160a82b2c2514224d6f669dfbd6bec-warrior-ii-yoga-pose-silhouette-by-vexels.png", class: "avatar dropdown-toggle border border-white m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <%= image_tag user_signed_in? && current_user.photo.attached? ? cl_image_path(current_user.photo.key, width: 200, height: 200) : "https://i1.wp.com/images.vexels.com/media/users/3/153423/isolated/preview/7d160a82b2c2514224d6f669dfbd6bec-warrior-ii-yoga-pose-silhouette-by-vexels.png", class: "avatar dropdown-toggle border border-dark m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
     </li>
     <li>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
