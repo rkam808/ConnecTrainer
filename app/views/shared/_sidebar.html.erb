@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper col nav-col">
   <!-- Sidebar -->
   <nav id="sidebar">
     <div class="sidebar-header">
@@ -9,7 +9,7 @@
         <%= link_to 'Edit my profile', edit_user_path(current_user), class: "sidebar-a" %>
       </li>
       <li class="active sidebar-li">
-        <a class="sidebar-a" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">As a Trainer</a>
+        <a class="sidebar-a dropdown-toggle" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">As a Trainer</a>
         <ul class="collapse list-unstyled sidebar-ul" id="homeSubmenu">
           <li class="sidebar-li">
             <a class="sidebar-a" href="#">Manage my Workouts</a>
