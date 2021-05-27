@@ -14,14 +14,14 @@
         <%= render "shared/map", style: "width: 100%; height: 600px;", class_name: "map-show" %>
       </div>
     </div>
-    <div class="align-items-center bg-secondary p-4 rounded" style="box-shadow: 0 0 15px rgba(0,0,0,0.2)" id="override">
+    <div class="align-items-center bg-secondary p-4 rounded" style="box-shadow: 3px 3px 10px rgba(0, 0, 0, .2)" id="override">
       <h2 class= "border-bottom">Book your Workout! </h2>
       <h5 style = "text-align:right">Price is ¥<%= @workout.price %></h5>
       <%= simple_form_for @booking do |f| %>
         <%= f.input :date_time, html5: true, input_html: { min: Date.today } %>
         <%= f.input :comment %>
         <%= f.hidden_field :workout_id %>
-        <%= f.button :submit, class: "btn btn-primary"  %>
+        <%= f.button :submit, class: "btn btn-flat"  %>
       <% end %>
     </div>
   </div>
