@@ -1,6 +1,7 @@
 <%= simple_form_for current_user do |f| %>
+  <%= f.input :name, label: 'Username' %>
   <%= f.input :bio, as: :text, default: current_user.bio %>
   <%= f.input :location %>
   <%= f.input :photo, as: :file, label: 'Upload a Profile Picture' %>
-  <%= f.submit "Save your profile", class: "btn btn-success" %>
+  <%= f.submit "Save your profile", class: "btn btn-flat" %>
 <% end %>
