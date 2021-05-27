@@ -1,17 +1,24 @@
-<div class="container">
+<!-- <div class="container" id = "search-form">
 <%= form_tag workouts_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
+    class: "form-control round",
     placeholder: "Find a workout"
   %>
-  <%#= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Location"
-  %>
-  <%# ↑ One of search box(for location) doesn't work well!! %>
 
-    <%= submit_tag "Submit", class: "btn btn-flat" %>
+    <%= submit_tag "Submit", class: "btn btn-flat corner" %>
+<% end %>
+</div>
+<br>
+<br> -->
+
+<div class="search container" id = "search-form">
+<%= form_tag workouts_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control round",
+    placeholder: "Search by location or sports type..."
+  %>
+    <%= submit_tag "", class: "corner" %>
 <% end %>
 </div>
