@@ -21,7 +21,7 @@ today = DateTime.now
   2.times do
     location = locations.sample
     club = Workout::CLUBS.sample
-    category = "badminton"
+    category = Workout::CATEGORIES.sample
     example_workout = Workout.create!(
     category: category,
     location: ("#{location}, Tokyo"),
