@@ -6,12 +6,6 @@ class WorkoutsController < ApplicationController
   def index
     if params[:query].present?
        @workouts = policy_scope(Workout).search_by_category_and_location(params[:query])
-
-      # sql_query = " \
-      #   workouts.category @@ :query \
-      #   OR workouts.location @@ :query \
-      # "
-      # @workouts = policy_scope(Workout).where(sql_query, query: "%#{params[:query]}%")
     else
       @workouts = policy_scope(Workout).all.order('created_at DESC')
     end

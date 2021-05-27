@@ -2,8 +2,8 @@
   <%= form_tag workouts_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control round",
-      placeholder: "Search by location or sports type..."
+      class: "round",
+      placeholder: "Search by location or activity..."
     %>
     <%= submit_tag "", class: "corner" %>
   <% end %>
