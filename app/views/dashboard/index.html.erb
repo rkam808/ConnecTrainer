@@ -11,9 +11,9 @@
     </div>
   </div>
 </div> -->
-<div class="row nav-fix">
+<div class="nav-fix dashboard-div">
   <%= render 'shared/sidebar' %>
-  <div class="col dashboard-booking-manager">
+  <div class="dashboard-booking-manager">
     <!-- Workout requests -->
     <div class="container">
       <table class="table">
@@ -78,7 +78,7 @@
                     <% end -%></td>
                   <td><%= simple_form_for booking do |f| -%>
                       <%= f.hidden_field :status, value: "declined" %>
-                      <%= f.button :submit, "Decline", class: "btn btn-danger" %>
+                      <%= f.button :submit, "Decline", class: "btn dashboard-btn-decline" %>
                     <% end -%></td>
                 </tr>
               <% end %>
