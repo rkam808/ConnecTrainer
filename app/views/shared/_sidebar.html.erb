@@ -6,7 +6,9 @@
         </div>
 
         <ul class="list-unstyled components sidebar-ul">
-            <p class="sidebar-p">Your Personal Trainer</p>
+            <li class="active sidebar-li">
+              <%= link_to 'Edit my profile', edit_user_path(current_user), class: "sidebar-a" %>
+            </li>
             <li class="active sidebar-li">
                 <a class="sidebar-a" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">As a Trainer</a>
                 <ul class="collapse list-unstyled sidebar-ul" id="homeSubmenu">
