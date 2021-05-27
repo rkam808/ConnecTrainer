@@ -30,8 +30,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+
   .home-search {
     // margin-bottom: 100px;
+    position: absolute;
+    top: 300px;
   }
 
   .banner h1 {
