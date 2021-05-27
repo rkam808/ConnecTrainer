@@ -23,11 +23,11 @@
 
 .search-box {
   justify-content: center;
-  width: 700px;
+  width: 580px;
   padding: 8px;
   position: absolute;
   top: 80px;
-  border-radius: 12 px;
+  border-radius: 12px;
 }
 
 .search-bow :first-child {
@@ -39,6 +39,9 @@
   margin: 0 auto;
   background-color: #e1e5ea;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, .2);
+  input {
+    border-radius: 4px !important;
+  }
 }
 
 
@@ -68,8 +71,12 @@
 
 .search {
     position: relative;
-    width: 75%;
+    // width: 75%;
     height: 30px;
     color: $green;
     opacity: .8;
 }
+
+// .search-container {
+//   width: 100%;
+// }

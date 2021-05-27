@@ -63,33 +63,36 @@
 }
 
 #sidebar .sidebar-ul .sidebar-li .sidebar-a:hover {
-    color: #068948;
-    background: #fff;
+  color: #068948;
+  background: #fff;
 }
 
 #sidebar .sidebar-ul .sidebar-li.active>a,
 .sidebar-a[aria-expanded="true"] {
-    color: #fff;
-    background: #068948;
+  color: #fff;
+  background: #068948;
 }
 
 .sidebar-a[data-toggle="collapse"] {
-    position: relative;
+  position: relative;
 }
 
 .dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
 }
 
 .sidebar-ul .sidebar-a {
-    font-size: 16px;
-    padding-left: 20px !important;
-    background: #068948;
-    border-top: 1px solid #04aa5a
+  padding-left: 20px !important;
+  background: #068948;
+  border-top: 1px solid #04aa5a
+}
+
+.sidebar-ul .nested {
+  font-size: 14px !important;
 }
 
 .sidebar-a,
