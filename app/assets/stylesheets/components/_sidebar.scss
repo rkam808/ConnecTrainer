@@ -13,7 +13,7 @@
 
 .wrapper {
     display: flex;
-    width: 100%;
+    // width: 100%;
     align-items: stretch;
 }
 
@@ -23,6 +23,7 @@
     background: #068948;
     color: #fff;
     transition: all 0.3s;
+    height: 100vh;
 }
 
 #sidebar.active {
@@ -32,10 +33,14 @@
 #sidebar .sidebar-header {
     padding: 20px;
     background: #068948;
+    h3 {
+      margin: 0;
+      font-size: 30px;
+    }
 }
 
 #sidebar .sidebar-ul.components {
-    padding: 20px 0;
+    padding: 0;
     border-bottom: none;
 }
 
@@ -46,13 +51,14 @@
 
 #sidebar .sidebar-ul .sidebar-li .sidebar-a {
     padding: 10px;
-    font-size: 1.1em;
+    font-size: 16px;
     display: block;
 }
 
 #sidebar .sidebar-a {
   padding-top: 8px;
   padding-bottom: 8px;
+  padding-left: 0;
 }
 
 #sidebar .sidebar-ul .sidebar-li .sidebar-a:hover {
@@ -79,10 +85,10 @@
 }
 
 .sidebar-ul .sidebar-a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
+    font-size: 16px;
+    padding-left: 20px !important;
     background: #068948;
-    border-top: 1px solid #04B862
+    border-top: 1px solid #04aa5a
 }
 
 .sidebar-a,
