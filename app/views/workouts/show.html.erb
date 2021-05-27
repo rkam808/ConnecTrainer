@@ -1,5 +1,5 @@
 <div class="show-banner nav-fix" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%=@workout.photo.attached? ? cl_image_path(@workout.photo.key) : image_path("https://source.unsplash.com/1200x800/?#{@workout.category}") %>);">
-  <div class="container">
+  <div class="container d-flex flex-column justify-content-center">
     <h1><%= @workout.name %></h1>
     <p class="mt-2"><i><%= @workout.category %></i></p>
   </div>
