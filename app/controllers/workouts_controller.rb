@@ -4,24 +4,14 @@ class WorkoutsController < ApplicationController
   before_action :set_workout, only: [:edit, :update, :destroy]
 
   def index
-    # @workouts = policy_scope(Workout).all.order('created_at DESC')
-
-
-    
-
     if params[:query].present?
-    #   # @workouts = policy_scope(Workout).where(category: params[:query])
-    #   sql_query = "category ILIKE :query OR location ILIKE :query"
-    #   @workouts = policy_scope(Workout).where(sql_query, query: "%#{params[:query]}%")
-    # else
-    # @workouts = policy_scope(Workout).all.order('created_at DESC')
-    # end
+       @workouts = policy_scope(Workout).search_by_category_and_location(params[:query])
 
-      sql_query = " \
-        workouts.category @@ :query \
-        OR workouts.location @@ :query \
-      "
-      @workouts = policy_scope(Workout).where(sql_query, query: "%#{params[:query]}%")
+      # sql_query = " \
+      #   workouts.category @@ :query \
+      #   OR workouts.location @@ :query \
+      # "
+      # @workouts = policy_scope(Workout).where(sql_query, query: "%#{params[:query]}%")
     else
       @workouts = policy_scope(Workout).all.order('created_at DESC')
     end
@@ -32,7 +22,6 @@ class WorkoutsController < ApplicationController
         lng: workout.longitude,
         info_window: render_to_string(partial: "info_window", locals: { workout: workout })
       }
-
     end
   end
 
