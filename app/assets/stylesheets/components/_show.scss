@@ -1,9 +1,14 @@
 // .countainer {
 //   display: inline-block;
 // }
+.avatar-large {
+  width: 56px;
+  border-radius: 50%;
+}
 
 .workout-discription {
-  width: 50%;
+  width: 80%;
+  margin: 16px
 }
 
 .form {
@@ -25,7 +30,7 @@
   background-size: cover;
   background-position: center;
   padding: 100px 0;
-  height: 30vh;
+  height: 40vh;
 }
 
 .show-banner h1 {
@@ -53,3 +58,10 @@
 #override {
   background-color:#e1e5ea !important;
 }
+
+.trainer-card > img {
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+}
+

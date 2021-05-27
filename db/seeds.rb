@@ -14,7 +14,8 @@ today = DateTime.now
     name:  Faker::Name.first_name + " " + Faker::Name.last_name,
     location: Faker::Address.street_address,
     email: Faker::Internet.email,
-    password: Faker::Internet.password
+    password: Faker::Internet.password,
+    bio: Faker::Company.industry
   )
 
 
