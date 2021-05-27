@@ -30,11 +30,7 @@
       </div>
 
       <%# <div class="map"></div> %>
-      <div id="map" class="map-workouts rounded mt-4"
-       style="width: 100%; height: 600px;"
-       data-markers="<%= @markers.to_json %>"
-       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+        <%= render "shared/map", style: "width: 100%; height: 600px;", class_name: "map-index" %>
     </div>
   <%# </div> %>
 </div>
