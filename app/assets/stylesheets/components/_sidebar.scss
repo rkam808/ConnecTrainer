@@ -24,7 +24,7 @@
     background: #068948;
     color: #fff;
     transition: all 0.3s;
-    height: 100vh;
+    height: calc(100vh - 60px);
 }
 
 #sidebar.active {

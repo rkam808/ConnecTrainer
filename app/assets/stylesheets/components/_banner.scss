@@ -19,7 +19,7 @@
 }
 
 .banner-container {
-  height: 100vh;
+  height: calc(100vh - 60px);
   padding: 150px 0;
   background-color: rgb(240, 240, 240);
   background-size: cover;
