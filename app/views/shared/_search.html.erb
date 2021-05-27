@@ -1,20 +1,17 @@
-<form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+<div class="container">
+<%= form_tag workouts_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a workout"
+  %>
+  <%#= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Location"
+  %>
+  <%# ↑ One of search box(for location) doesn't work well!! %>
 
-  <select class="form-select form-control my-2" aria-label="Default select example">
-            <option selected>Select a Category</option>
-            <% Workout::CATEGORIES.each do |  category| %>
-            <option value="1"> <%= category %>  </option>
-            <% end %>
-
-        </select>
-            <div class="search-form-control form-group">
-        <div>
-        <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Location" />
-
-        <%= link_to "Submit", workouts_path, class: "btn btn-flat" %>
-    </div>
-  </div>
-
-
-
-</form>
+    <%= submit_tag "Submit", class: "btn btn-flat" %>
+<% end %>
+</div>

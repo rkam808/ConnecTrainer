@@ -4,13 +4,28 @@ class WorkoutsController < ApplicationController
   before_action :set_workout, only: [:edit, :update, :destroy]
 
   def index
-    @workouts = policy_scope(Workout).all.order('created_at DESC')
+    # @workouts = policy_scope(Workout).all.order('created_at DESC')
 
-    @markers = @workouts.geocoded.map do |workout|
-      {
-        lat: workout.latitude,
-        lng: workout.longitude
-      }
+    # @markers = @workouts.geocoded.map do |workout|
+    #   {
+    #     lat: workout.latitude,
+    #     lng: workout.longitude
+    #   }
+    # end
+
+    if params[:query].present?
+    #   # @workouts = policy_scope(Workout).where(category: params[:query])
+    #   sql_query = "category ILIKE :query OR location ILIKE :query"
+    #   @workouts = policy_scope(Workout).where(sql_query, query: "%#{params[:query]}%")
+    # else
+    # @workouts = policy_scope(Workout).all.order('created_at DESC')
+    # end
+
+      sql_query = " \
+        workouts.category @@ :query \
+        OR workouts.location @@ :query \
+      "
+      @workouts = policy_scope(Workout).where(sql_query, query: "%#{params[:query]}%")
     end
   end
 
