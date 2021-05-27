@@ -61,6 +61,6 @@ class WorkoutsController < ApplicationController
   end
 
   def workout_params
-    params.require(:workout).permit(:category, :account_type, :location, :name, :description, :price, :photo)
+    params.require(:workout).permit(:category, :account_type, :location, :name, :description, :price, :photo, :user_id)
   end
 end
