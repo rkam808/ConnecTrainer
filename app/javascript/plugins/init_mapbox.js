@@ -20,8 +20,11 @@ const initMapbox = () => {
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
-      new mapboxgl.Marker()
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+
+      new mapboxgl.Marker({ "color": "#00b862" })
         .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup)
         .addTo(map);
     });
 
