@@ -37,7 +37,6 @@
     padding: 16px;
     display: flex;
     justify-content: space-between;
-
 }
 
 
@@ -51,6 +50,6 @@
   bottom: 0;
   width: 100%;
   &:hover {
-    background-color: rgba(0, 0, 0, .3);
+    background-color: rgba(0, 0, 0, .2);
   }
 }
