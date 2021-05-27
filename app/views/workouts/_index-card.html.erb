@@ -1,16 +1,17 @@
 <div class="workout-card">
-  <%= link_to '', workout_path(workout), class: 'card-link'  %>
+  <%# link_to '', workout_path(workout), class: 'card-link'  %>
   <div class="card-workout mb-4 rounded">
-    <img src="<%= workout.photo.attached? ? cl_image_path(workout.photo.key, width: 150, height: 150) : image_path("https://source.unsplash.com/150x150/?#{workout.category}") %>">
+    <img src="<%= workout.photo.attached? ? cl_image_path(workout.photo.key, width: 150, height: 150) : image_path("https://source.unsplash.com/150x150/?#{workout.category}") %>" class="workout-photo">
     <div class="card-workout-infos">
-      <div>
+      <div class="card-text-left">
         <p><%= workout.location %></p>
         <h2><strong><%= workout.name %></strong></h2>
-        <p><%= workout.category %></p>
+        <p class="card-category"><%= workout.category.capitalize %></p>
         <p><%= workout.user.name %></p>
       </div>
-      <div>
-        <h6>¥<%= workout.price %></h6>
+      <div class="card-text-right">
+        <h5 class="card-price">¥<%= workout.price %></h5>
+        <%= image_tag workout.user.photo.attached? ? cl_image_path(workout.user.photo.key, width: 200, height: 200) : "", class: "avatar" %>
       </div>
     </div>
   </div>
