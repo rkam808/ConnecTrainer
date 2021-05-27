@@ -9,7 +9,8 @@ class WorkoutsController < ApplicationController
     @markers = @workouts.geocoded.map do |workout|
       {
         lat: workout.latitude,
-        lng: workout.longitude
+        lng: workout.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { workout: workout })
       }
     end
   end
