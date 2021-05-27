@@ -65,13 +65,13 @@
                   <td><%= booking.date_time %></td>
                   <td><%= booking.status %></td>
                   <td><%= simple_form_for booking do |f| -%>
-                    <%= f.hidden_field :status, value: "confirmed" %>
-                    <%= f.button :submit, "Confirm", class: "btn btn-success" %>
-                  <% end -%></td>
+                      <%= f.hidden_field :status, value: "confirmed" %>
+                      <%= f.button :submit, "Confirm", class: "btn btn-success" %>
+                    <% end -%></td>
                   <td><%= simple_form_for booking do |f| -%>
-                    <%= f.hidden_field :status, value: "declined" %>
-                    <%= f.button :submit, "Decline", class: "btn btn-danger" %>
-                  <% end -%></td>
+                      <%= f.hidden_field :status, value: "declined" %>
+                      <%= f.button :submit, "Decline", class: "btn btn-danger" %>
+                    <% end -%></td>
                 </tr>
               <% end %>
             <% end %>
@@ -79,20 +79,16 @@
         </table>
       <% end %>
     </div>
-
   </div>
 </div>
-
-
 <!-- jQuery CDN -->
-         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-         <!-- Bootstrap Js CDN -->
-         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-         <script type="text/javascript">
-             $(document).ready(function () {
-                 $('#sidebarCollapse').on('click', function () {
-                     $('#sidebar').toggleClass('active');
-                 });
-             });
-         </script>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<!-- Bootstrap Js CDN -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+      $('#sidebarCollapse').on('click', function () {
+          $('#sidebar').toggleClass('active');
+      });
+  });
+</script>

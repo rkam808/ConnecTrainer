@@ -1,48 +1,46 @@
 <div class="wrapper">
-    <!-- Sidebar -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>Dashboard</h3>
-        </div>
-
-        <ul class="list-unstyled components sidebar-ul">
-            <li class="active sidebar-li">
-              <%= link_to 'Edit my profile', edit_user_path(current_user), class: "sidebar-a" %>
-            </li>
-            <li class="active sidebar-li">
-                <a class="sidebar-a" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">As a Trainer</a>
-                <ul class="collapse list-unstyled sidebar-ul" id="homeSubmenu">
-                    <li class="sidebar-li">
-                        <a class="sidebar-a" href="#">Manage my Workouts</a>
-                    </li>
-                    <li class="sidebar-li">
-                        <%= link_to 'Create a Workout', new_workout_path, class: "sidebar-a" %>
-                    </li>
-                </ul>
-            </li>
-            <li class="sidebar-li">
-                <a class="sidebar-a" href="#">My Outgoing Workout Requests</a>
-            </li>
-            <li class="sidebar-li">
-                <a class="sidebar-a" href="#">Requests for My Workouts</a>
-            </li>
-            <li class="sidebar-li">
-                <a class="sidebar-a" href="#">Booking Support</a>
-            </li>
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>Dashboard</h3>
+    </div>
+    <ul class="list-unstyled components sidebar-ul">
+      <li class="active sidebar-li">
+        <%= link_to 'Edit my profile', edit_user_path(current_user), class: "sidebar-a" %>
+      </li>
+      <li class="active sidebar-li">
+        <a class="sidebar-a" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">As a Trainer</a>
+        <ul class="collapse list-unstyled sidebar-ul" id="homeSubmenu">
+          <li class="sidebar-li">
+            <a class="sidebar-a" href="#">Manage my Workouts</a>
+          </li>
+          <li class="sidebar-li">
+            <%= link_to 'Create a Workout', new_workout_path, class: "sidebar-a" %>
+          </li>
         </ul>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    </nav>
-
+      </li>
+      <li class="sidebar-li">
+        <a class="sidebar-a" href="#">My Outgoing Workout Requests</a>
+      </li>
+      <li class="sidebar-li">
+        <a class="sidebar-a" href="#">Requests for My Workouts</a>
+      </li>
+      <li class="sidebar-li">
+        <a class="sidebar-a" href="#">Booking Support</a>
+      </li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </nav>
 </div>
