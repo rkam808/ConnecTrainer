@@ -4,7 +4,7 @@
 
 .card-workout {
   overflow: hidden;
-  height: 140px;
+  height: 150px;
   width: 100%;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -17,7 +17,7 @@
 
 .card-workout .workout-photo {
   height: 100%;
-  width: 140px;
+  width: 150px;
   object-fit: cover;
 }
 
@@ -46,6 +46,9 @@
 }
 
 .card-text-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   .card-category {
     font-style: italic;
     margin-bottom: 8px;
@@ -60,9 +63,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-end;
+  .trainer-info {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+  }
   .card-price {
-    margin-left: 16px;
-    margin-bottom: 0;
+    // margin-top: 16px;
+    margin-bottom: 24px;
   }
   h5 {
     font-weight: bold;

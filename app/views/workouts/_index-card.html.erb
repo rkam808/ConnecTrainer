@@ -10,8 +10,11 @@
         <p><%= workout.user.name %></p>
       </div>
       <div class="card-text-right">
-        <%= image_tag workout.user.photo.attached? ? cl_image_path(workout.user.photo.key, width: 200, height: 200) : "", class: "avatar" %>
         <h5 class="card-price">¥<%= workout.price %></h5>
+        <div class="trainer-info">
+          <%= image_tag workout.user.photo.attached? ? cl_image_path(workout.user.photo.key, width: 200, height: 200) : image_path("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnYvr-reoQdSfeUXT7LbXAXredm5Gv5ToUuqFvXFnyXPhbpzMQfAaoRJJI0leK9qO3&usqp=CAU", width: 200, height: 200), class: "avatar border border-dark" %>
+        </div>
+        <%# workout.user.photo.attached? ? image_tag cl_image_path(workout.user.photo.key, width: 200, height: 200) : "<i class='fas fa-user'></i>", class: "avatar" %>
       </div>
     </div>
   </div>
