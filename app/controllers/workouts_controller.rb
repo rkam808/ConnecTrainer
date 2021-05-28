@@ -5,7 +5,7 @@ class WorkoutsController < ApplicationController
 
   def index
     if params[:query].present?
-       @workouts = policy_scope(Workout).search_by_category_and_location(params[:query])
+       @workouts = policy_scope(Workout).all.search_by_category_and_location(params[:query])
     else
       @workouts = policy_scope(Workout).all.order('created_at DESC')
     end
