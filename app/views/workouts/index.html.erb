@@ -12,10 +12,11 @@
 
 
   <%# <div class="map-text"> %>
-    <div class="my-5"><h1 style="text-shadow: 1px 1px 3px rgba(0,0,0, 20%);;">Workouts in your area...</h1></div>
+    <%# <div class="my-5"><h1 style="text-shadow: 1px 1px 3px rgba(0,0,0, 20%);;">Workouts in your area...</h1></div> %>
 
-    <div class="search-results mt-3">
+    <div class="search-results mt-5">
       <div class="cards">
+        <h1 class="mb-5" style="text-shadow: 1px 1px 3px rgba(0,0,0, 20%);">Workouts in your area...</h1>
         <% @workouts.each do |workout| %>
             <%= render 'index-card', workout: workout %>
         <% end %>
@@ -23,11 +24,11 @@
 
       <div class="sidebar-index ml-5">
         <div class="search-change rounded">
-          <h2>Search Again:</h2>
+          <h2 class="ml-3">Search Again:</h2>
           <%= render "shared/search" %>
         </div>
         <div class="map-position">
-          <%= render "shared/map", styling: "width: 100%; height: 450px;", class_name: "map-index" %>
+          <%= render "shared/map", styling: "width: 100%; height: 370px;", class_name: "map-index" %>
         </div>
       </div>
   </div>
