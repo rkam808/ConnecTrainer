@@ -7,11 +7,11 @@
 <div class="container d-flex">
   <div class="d-flex my-5">
     <div class="workout-discription mr-5">
-      <div class="workout-text-info rounded">
+      <div class="workout-text-info p-4 rounded">
         <h2><%= @workout.name %> is...</h2>
         <p>  <%= @workout.description %>  </p>
         <div class="trainer-card mt-4 p-2">
-          <%= image_tag User.find(@workout.user_id).photo.attached? ? cl_image_path(User.find(@workout.user_id).photo.key, width: 200, height: 200) : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar-large", alt: "avatar-large" %>
+          <%= image_tag User.find(@workout.user_id).photo.attached? ? cl_image_path(User.find(@workout.user_id).photo.key, width: 200, height: 200) : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnYvr-reoQdSfeUXT7LbXAXredm5Gv5ToUuqFvXFnyXPhbpzMQfAaoRJJI0leK9qO3&usqp=CAU", class: "avatar-large border border-light", alt: "avatar-large" %>
           <div class="trainer-avatar">
             <h4>Trainer: <%= @workout.user.name %></h4>
             <p>  <%= @workout.user.bio %>  </p>
@@ -23,7 +23,7 @@
     <div class="book-card">
       <div class="align-items-center bg-secondary p-4 rounded" style="box-shadow: 3px 3px 10px rgba(0, 0, 0, .2)" id="override">
         <h3 class="border-bottom">Book this Workout! </h3>
-        <h2 class="mt-3" style="text-align: right; font-weight: bold">¥<%= @workout.price %></h2>
+        <h2 class="mt-4" style="text-align: right; font-weight: bold">¥<%= @workout.price %></h2>
         <%= simple_form_for @booking do |f| %>
           <%= f.input :date_time, html5: true, input_html: { min: Date.today } %>
           <%= f.input :comment %>
