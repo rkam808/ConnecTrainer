@@ -1,5 +1,5 @@
+<%= link_to workout_path(workout) do %>
 <div class="workout-card">
-  <%# link_to '', workout_path(workout), class: 'card-link'  %>
   <div class="card-workout mb-4 rounded">
     <img src="<%= workout.photo.attached? ? cl_image_path(workout.photo.key, width: 150, height: 150) : image_path("https://source.unsplash.com/150x150/?#{workout.category}") %>" class="workout-photo">
     <div class="card-workout-infos">
@@ -16,3 +16,4 @@
     </div>
   </div>
 </div>
+<% end %>
