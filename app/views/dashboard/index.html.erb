@@ -24,54 +24,57 @@
           <tr>
             <th scope="col"></th>
             <th scope="col">Workout</th>
+            <th scope="col">Location</th>
             <th scope="col">Trainer</th>
             <th scope="col">When</th>
             <th scope="col">Status</th>
+            <th scope="col">Comment</th>
           </tr>
         </thead>
         <tbody>
           <% @outgoing_requests.each do |booking| %>
             <tr>
               <th scope="row"></th>
-              <td>
-                <p><%= booking.workout.name %>,</p>
-                <p><%= booking.workout.location %></p>
-              </td>
+
+                <td><p><%= booking.workout.name %>,</p></td>
+               <td> <p><%= booking.workout.location %></p></td>
+
               <td><%= booking.workout.user.name %></td>
               <td><%= booking.date_time %></td>
               <td><%= booking.status %></td>
+              <td><%= booking.comment %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
       <br>
       <br>
+      <% if @pending_requests.length > 0 %>
       <% if current_user.workouts.count > 0 %>
         <table class="table">
-          <h3>Requests for My Workouts</h3>
+          <h3>Pending Requests for My Workouts</h3>
           <thead>
             <tr>
               <th scope="col"></th>
               <th scope="col">Workout</th>
+              <th scope="col">Comment</th>
               <th scope="col">Participant</th>
               <th scope="col">When</th>
-              <th scope="col">Status</th>
               <th scope="col"></th>
               <th scope="col"></th>
             </tr>
           </thead>
+
           <tbody>
             <% @my_workouts.each do |workout| %>
               <% workout.bookings.each do |booking| %>
+                <% if booking.status == "pending" %>
                 <tr>
                   <th scope="row"></th>
-                  <td>
-                    <p><%= workout.name %>,</p>
-                    <p><%= booking.workout.location %></p>
-                  </td>
+                  <td><p><%= workout.name %></p></td>
+                  <td><%= booking.comment %></td>
                   <td><%= booking.user.name %></td>
                   <td><%= booking.date_time %></td>
-                  <td><%= booking.status %></td>
                   <td><%= simple_form_for booking do |f| -%>
                       <%= f.hidden_field :status, value: "confirmed" %>
                       <%= f.button :submit, "Confirm", class: "btn btn-success" %>
@@ -81,10 +84,13 @@
                       <%= f.button :submit, "Decline", class: "btn dashboard-btn-decline" %>
                     <% end -%></td>
                 </tr>
+                <% end %>
               <% end %>
             <% end %>
+
           </tbody>
         </table>
+          <% end %>
       <% end %>
     </div>
     <div class="dashboardfooter" style="width:75%; height: 100px; position: absolute; bottom: 15px;">
@@ -103,4 +109,3 @@
       });
   });
 </script>
-
