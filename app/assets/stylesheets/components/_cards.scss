@@ -42,16 +42,6 @@
   position: relative;
 }
 
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  &:hover {
-    background-color: rgba(0, 0, 0, .2);
-  }
-}
-
 .card-text-left {
   .card-category {
     font-style: italic;
