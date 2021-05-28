@@ -25,6 +25,8 @@
     color: #fff;
     transition: all 0.3s;
     height: calc(100vh - 60px);
+    position: sticky;
+    top: 60px;
 }
 
 #sidebar.active {

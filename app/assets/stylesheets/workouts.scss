@@ -4,16 +4,24 @@
   // justify-content: center;
 }
 
-.sidebar {
-  width: 200px;
+.sidebar-index {
+  // width: 200px;
   flex-grow: 1;
 }
 
 .change-search {
   height: 150px;
   width: 100%;
-  background-color: aqua;
-  // background-image: url(https://images.unsplash.com/photo-1569186273859-0a3cf0a68568?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2818&q=80);
+}
+
+.search-change {
+  position: sticky;
+  top: 80px;
+}
+
+.map-position {
+  position: sticky;
+  top: 210px;
 }
 
 .map {
