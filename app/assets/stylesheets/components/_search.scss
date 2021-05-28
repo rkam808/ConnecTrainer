@@ -54,6 +54,9 @@
     top: 0;
     left: 0;
     z-index: 5;
+    height: 48px;
+    font-size: 24px;
+    color: $secondary;
 }
 
 .corner {
@@ -67,6 +70,7 @@
     border: none;
     background-image: url("https://quoox.com/wp-content/uploads/2020/05/Manage-your-outdoor-group-training.jpg");
     background-repeat: no-repeat;
+    font-size: 24px;
 }
 
 .search {
@@ -75,6 +79,7 @@
     height: 30px;
     color: $green;
     opacity: .8;
+    margin: 12px;
 }
 
 // .search-container {
