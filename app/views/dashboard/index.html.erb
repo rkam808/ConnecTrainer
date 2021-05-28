@@ -28,7 +28,6 @@
             <th scope="col">Trainer</th>
             <th scope="col">When</th>
             <th scope="col">Status</th>
-            <th scope="col">Comment</th>
           </tr>
         </thead>
         <tbody>
@@ -36,13 +35,12 @@
             <tr>
               <th scope="row"></th>
 
-                <td><p><%= booking.workout.name %>,</p></td>
+                <td><p><%= booking.workout.name %></p></td>
                <td> <p><%= booking.workout.location %></p></td>
 
               <td><%= booking.workout.user.name %></td>
-              <td><%= booking.date_time %></td>
+              <td><%= booking.date_time.strftime("%B %-d %Y")%></td>
               <td><%= booking.status %></td>
-              <td><%= booking.comment %></td>
             </tr>
           <% end %>
         </tbody>
@@ -74,7 +72,7 @@
                   <td><p><%= workout.name %></p></td>
                   <td><%= booking.comment %></td>
                   <td><%= booking.user.name %></td>
-                  <td><%= booking.date_time %></td>
+                  <td><%= booking.date_time.strftime("%B %-d %Y") %></td>
                   <td><%= simple_form_for booking do |f| -%>
                       <%= f.hidden_field :status, value: "confirmed" %>
                       <%= f.button :submit, "Confirm", class: "btn btn-success" %>
@@ -95,7 +93,7 @@
     </div>
   </div>
 </div>
-<%= render "shared/footer" %>
+    <%= render "shared/footer" %>
 <!-- jQuery CDN -->
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <!-- Bootstrap Js CDN -->
