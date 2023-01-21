@@ -7,6 +7,7 @@ Workout.destroy_all
 User.destroy_all
 puts 'Creating Users & Workouts'
 locations = ['Omotesando', 'Yokohama', 'Fujisawa', 'Saitama', 'Setagaya', 'Ueno', 'Meguro', 'Shibuya', 'Shinagawa', 'Kanda', 'Shinjuku', 'Mitaka']
+categories = ['Yoga', 'Crossfit', 'Kick-boxing', 'Swimming', 'Jogging', 'badminton', 'volleyball', 'Basketball', 'Football', 'Fitness', 'Zumba', 'Salsa', 'Weight Training']
 today = DateTime.now
 
 10.times do
@@ -18,11 +19,10 @@ today = DateTime.now
     bio: Faker::Company.industry
   )
 
-
   2.times do
     location = locations.sample
     club = Workout::CLUBS.sample
-    category = Workout::CATEGORIES.sample
+    category = categories.sample
     example_workout = Workout.create!(
     category: category,
     location: ("#{location}, Tokyo"),
