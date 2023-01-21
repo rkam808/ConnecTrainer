@@ -3,6 +3,7 @@ databases:
     ipAllowList: []
     databaseName: connectrainer
     user: connectrainer
+    plan: free
 
 services:
   - type: web
