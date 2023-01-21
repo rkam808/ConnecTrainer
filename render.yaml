@@ -1,8 +1,8 @@
 databases:
   - name: postgres
     ipAllowList: []
-    databaseName: ConnecTrainer
-    user: ConnecTrainer
+    databaseName: connectrainer
+    user: connectrainer
 
 services:
   - type: web
